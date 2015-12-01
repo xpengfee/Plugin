@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提供 SAP 与 MADC 之间的同步转换</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetNormalToSyncMADCCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNormalToSyncMADCCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNormalToSyncMADCCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNormalSyncErrorMADCCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNormalSyncErrorMADCCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNormalSyncErrorMADCCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNormalSyncErrorWInOutInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNormalSyncErrorWInOutInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNormalSyncErrorWInOutInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncNormalWInOutInfoToSyncToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cMADCCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncNormalWInOutInfoToSyncToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncNormalWInOutInfoToSyncToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncNormalWInOutInfoSyncErrorToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cMADCCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncNormalWInOutInfoSyncErrorToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncNormalWInOutInfoSyncErrorToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncNormalWInOutInfoToSAPByBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBikeBarcodeList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncNormalWInOutInfoToSAPByBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncNormalWInOutInfoToSAPByBarCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackToSyncMADCCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackToSyncMADCCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBackToSyncMADCCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackSyncErrorMADCCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackSyncErrorMADCCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBackSyncErrorMADCCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackSyncErrorWInOutInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBackSyncErrorWInOutInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBackSyncErrorWInOutInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncBackWInOutInfoToSyncToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cMADCCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncBackWInOutInfoToSyncToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncBackWInOutInfoToSyncToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncBackWInOutInfoSyncErrorToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cMADCCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncBackWInOutInfoSyncErrorToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncBackWInOutInfoSyncErrorToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncBackWInOutInfoToSAPByBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBikeBarcodeList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBusinessTypeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncBackWInOutInfoToSAPByBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncBackWInOutInfoToSAPByBarCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduceNormalToSyncOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduceNormalToSyncOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProduceNormalToSyncOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduceNormalSyncErrorOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduceNormalSyncErrorOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProduceNormalSyncErrorOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduceNormalSyncErrorThreeBarCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduceNormalSyncErrorThreeBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProduceNormalSyncErrorThreeBarCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceNormalThreeBarcodeToSyncToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceNormalThreeBarcodeToSyncToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncProduceNormalThreeBarcodeToSyncToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceNormalThreeBarcodeSyncErrorToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceNormalThreeBarcodeSyncErrorToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncProduceNormalThreeBarcodeSyncErrorToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceNormalThreeBarCodeToSAPByBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBikeBarcodeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceNormalThreeBarCodeToSAPByBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncProduceNormalThreeBarCodeToSAPByBarCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduceRebindToSyncOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduceRebindToSyncOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProduceRebindToSyncOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduceRebindSyncErrorOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduceRebindSyncErrorOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProduceRebindSyncErrorOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduceSyncErrorReBindThreeBarcode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduceSyncErrorReBindThreeBarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProduceSyncErrorReBindThreeBarcodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceReBindThreeBarcodeToSyncToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceReBindThreeBarcodeToSyncToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncProduceReBindThreeBarcodeToSyncToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceReBindThreeBarcodeSyncErrorToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceReBindThreeBarcodeSyncErrorToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncProduceReBindThreeBarcodeSyncErrorToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceReBindThreeBarcodeToSAPByBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBikeBarcodeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncProduceReBindThreeBarcodeToSAPByBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncProduceReBindThreeBarcodeToSAPByBarCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseNormalToSyncOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPurchaseNormalToSyncOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseNormalToSyncOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseNormalSyncErrorOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPurchaseNormalSyncErrorOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseNormalSyncErrorOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseNormalSyncErrorThreeBarCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPurchaseNormalSyncErrorThreeBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseNormalSyncErrorThreeBarCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseNormalThreeBarcodeToSyncToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseNormalThreeBarcodeToSyncToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPurchaseNormalThreeBarcodeToSyncToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseNormalThreeBarCodeToSAPByBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBikeBarcodeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseNormalThreeBarCodeToSAPByBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPurchaseNormalThreeBarCodeToSAPByBarCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseRebindToSyncOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPurchaseRebindToSyncOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseRebindToSyncOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseRebindSyncErrorOrderCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPurchaseRebindSyncErrorOrderCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseRebindSyncErrorOrderCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseSyncErrorReBindThreeBarcode">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPurchaseSyncErrorReBindThreeBarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseSyncErrorReBindThreeBarcodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseReBindThreeBarcodeToSyncToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseReBindThreeBarcodeToSyncToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPurchaseReBindThreeBarcodeToSyncToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOrderCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAPResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseReBindThreeBarcodeToSAPByBarCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cBikeBarcodeList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncPurchaseReBindThreeBarcodeToSAPByBarCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncPurchaseReBindThreeBarcodeToSAPByBarCodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cSyncMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetNormalToSyncMADCCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNormalToSyncMADCCode" />
+  </wsdl:message>
+  <wsdl:message name="GetNormalToSyncMADCCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNormalToSyncMADCCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNormalSyncErrorMADCCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNormalSyncErrorMADCCode" />
+  </wsdl:message>
+  <wsdl:message name="GetNormalSyncErrorMADCCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNormalSyncErrorMADCCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNormalSyncErrorWInOutInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNormalSyncErrorWInOutInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNormalSyncErrorWInOutInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNormalSyncErrorWInOutInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncNormalWInOutInfoToSyncToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncNormalWInOutInfoToSyncToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncNormalWInOutInfoToSyncToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncNormalWInOutInfoToSyncToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncNormalWInOutInfoSyncErrorToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncNormalWInOutInfoSyncErrorToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncNormalWInOutInfoSyncErrorToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncNormalWInOutInfoSyncErrorToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncNormalWInOutInfoToSAPByBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncNormalWInOutInfoToSAPByBarCode" />
+  </wsdl:message>
+  <wsdl:message name="SyncNormalWInOutInfoToSAPByBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncNormalWInOutInfoToSAPByBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBackToSyncMADCCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBackToSyncMADCCode" />
+  </wsdl:message>
+  <wsdl:message name="GetBackToSyncMADCCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBackToSyncMADCCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBackSyncErrorMADCCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBackSyncErrorMADCCode" />
+  </wsdl:message>
+  <wsdl:message name="GetBackSyncErrorMADCCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBackSyncErrorMADCCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBackSyncErrorWInOutInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBackSyncErrorWInOutInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBackSyncErrorWInOutInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBackSyncErrorWInOutInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncBackWInOutInfoToSyncToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncBackWInOutInfoToSyncToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncBackWInOutInfoToSyncToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncBackWInOutInfoToSyncToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncBackWInOutInfoSyncErrorToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncBackWInOutInfoSyncErrorToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncBackWInOutInfoSyncErrorToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncBackWInOutInfoSyncErrorToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncBackWInOutInfoToSAPByBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncBackWInOutInfoToSAPByBarCode" />
+  </wsdl:message>
+  <wsdl:message name="SyncBackWInOutInfoToSAPByBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncBackWInOutInfoToSAPByBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceNormalToSyncOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduceNormalToSyncOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceNormalToSyncOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProduceNormalToSyncOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceNormalSyncErrorOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduceNormalSyncErrorOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceNormalSyncErrorOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProduceNormalSyncErrorOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceNormalSyncErrorThreeBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduceNormalSyncErrorThreeBarCode" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceNormalSyncErrorThreeBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProduceNormalSyncErrorThreeBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceNormalThreeBarcodeToSyncToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncProduceNormalThreeBarcodeToSyncToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceNormalThreeBarcodeToSyncToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncProduceNormalThreeBarcodeToSyncToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceNormalThreeBarcodeSyncErrorToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncProduceNormalThreeBarcodeSyncErrorToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceNormalThreeBarcodeSyncErrorToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncProduceNormalThreeBarcodeSyncErrorToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceNormalThreeBarCodeToSAPByBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncProduceNormalThreeBarCodeToSAPByBarCode" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceNormalThreeBarCodeToSAPByBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncProduceNormalThreeBarCodeToSAPByBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceRebindToSyncOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduceRebindToSyncOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceRebindToSyncOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProduceRebindToSyncOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceRebindSyncErrorOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduceRebindSyncErrorOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceRebindSyncErrorOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProduceRebindSyncErrorOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceSyncErrorReBindThreeBarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduceSyncErrorReBindThreeBarcode" />
+  </wsdl:message>
+  <wsdl:message name="GetProduceSyncErrorReBindThreeBarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProduceSyncErrorReBindThreeBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceReBindThreeBarcodeToSyncToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncProduceReBindThreeBarcodeToSyncToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceReBindThreeBarcodeToSyncToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncProduceReBindThreeBarcodeToSyncToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceReBindThreeBarcodeSyncErrorToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncProduceReBindThreeBarcodeSyncErrorToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceReBindThreeBarcodeSyncErrorToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncProduceReBindThreeBarcodeSyncErrorToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceReBindThreeBarcodeToSAPByBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncProduceReBindThreeBarcodeToSAPByBarCode" />
+  </wsdl:message>
+  <wsdl:message name="SyncProduceReBindThreeBarcodeToSAPByBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncProduceReBindThreeBarcodeToSAPByBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseNormalToSyncOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchaseNormalToSyncOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseNormalToSyncOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseNormalToSyncOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseNormalSyncErrorOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchaseNormalSyncErrorOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseNormalSyncErrorOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseNormalSyncErrorOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseNormalSyncErrorThreeBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchaseNormalSyncErrorThreeBarCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseNormalSyncErrorThreeBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseNormalSyncErrorThreeBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseNormalThreeBarcodeToSyncToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseNormalThreeBarcodeToSyncToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseNormalThreeBarcodeToSyncToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseNormalThreeBarcodeToSyncToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseNormalThreeBarcodeSyncErrorToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseNormalThreeBarcodeSyncErrorToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseNormalThreeBarCodeToSAPByBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseNormalThreeBarCodeToSAPByBarCode" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseNormalThreeBarCodeToSAPByBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseNormalThreeBarCodeToSAPByBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseRebindToSyncOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchaseRebindToSyncOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseRebindToSyncOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseRebindToSyncOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseRebindSyncErrorOrderCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchaseRebindSyncErrorOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseRebindSyncErrorOrderCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseRebindSyncErrorOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseSyncErrorReBindThreeBarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchaseSyncErrorReBindThreeBarcode" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseSyncErrorReBindThreeBarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseSyncErrorReBindThreeBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseReBindThreeBarcodeToSyncToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseReBindThreeBarcodeToSyncToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseReBindThreeBarcodeToSyncToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseReBindThreeBarcodeToSyncToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseReBindThreeBarcodeSyncErrorToSAP" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseReBindThreeBarcodeSyncErrorToSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseReBindThreeBarcodeToSAPByBarCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseReBindThreeBarcodeToSAPByBarCode" />
+  </wsdl:message>
+  <wsdl:message name="SyncPurchaseReBindThreeBarcodeToSAPByBarCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncPurchaseReBindThreeBarcodeToSAPByBarCodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SAPSyncServiceSoap">
+    <wsdl:operation name="GetNormalToSyncMADCCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取正常待同步的出入库单据列表</wsdl:documentation>
+      <wsdl:input message="tns:GetNormalToSyncMADCCodeSoapIn" />
+      <wsdl:output message="tns:GetNormalToSyncMADCCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNormalSyncErrorMADCCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步出错的出入库单据列表</wsdl:documentation>
+      <wsdl:input message="tns:GetNormalSyncErrorMADCCodeSoapIn" />
+      <wsdl:output message="tns:GetNormalSyncErrorMADCCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNormalSyncErrorWInOutInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步错误的出入库信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNormalSyncErrorWInOutInfoSoapIn" />
+      <wsdl:output message="tns:GetNormalSyncErrorWInOutInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoToSyncToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按单据同步正常的出入库信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncNormalWInOutInfoToSyncToSAPSoapIn" />
+      <wsdl:output message="tns:SyncNormalWInOutInfoToSyncToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoSyncErrorToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按单据同步错误的出入库信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncNormalWInOutInfoSyncErrorToSAPSoapIn" />
+      <wsdl:output message="tns:SyncNormalWInOutInfoSyncErrorToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoToSAPByBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">同步指定整车编码的出入库信息更新至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncNormalWInOutInfoToSAPByBarCodeSoapIn" />
+      <wsdl:output message="tns:SyncNormalWInOutInfoToSAPByBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBackToSyncMADCCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取待同步的退货出入库单据列表</wsdl:documentation>
+      <wsdl:input message="tns:GetBackToSyncMADCCodeSoapIn" />
+      <wsdl:output message="tns:GetBackToSyncMADCCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBackSyncErrorMADCCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步出错的退货出入库单据列表</wsdl:documentation>
+      <wsdl:input message="tns:GetBackSyncErrorMADCCodeSoapIn" />
+      <wsdl:output message="tns:GetBackSyncErrorMADCCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBackSyncErrorWInOutInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步错误的退货出入库信息</wsdl:documentation>
+      <wsdl:input message="tns:GetBackSyncErrorWInOutInfoSoapIn" />
+      <wsdl:output message="tns:GetBackSyncErrorWInOutInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoToSyncToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按单据同步正常的退货出入库信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncBackWInOutInfoToSyncToSAPSoapIn" />
+      <wsdl:output message="tns:SyncBackWInOutInfoToSyncToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoSyncErrorToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按单据同步错误的退货出入库信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncBackWInOutInfoSyncErrorToSAPSoapIn" />
+      <wsdl:output message="tns:SyncBackWInOutInfoSyncErrorToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoToSAPByBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">同步指定整车编码的退货出入库信息更新至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncBackWInOutInfoToSAPByBarCodeSoapIn" />
+      <wsdl:output message="tns:SyncBackWInOutInfoToSAPByBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalToSyncOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取正常待同步的生产三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetProduceNormalToSyncOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetProduceNormalToSyncOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalSyncErrorOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步出错的生产三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetProduceNormalSyncErrorOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetProduceNormalSyncErrorOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalSyncErrorThreeBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步错误的生产三码合一整车档案</wsdl:documentation>
+      <wsdl:input message="tns:GetProduceNormalSyncErrorThreeBarCodeSoapIn" />
+      <wsdl:output message="tns:GetProduceNormalSyncErrorThreeBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarcodeToSyncToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步正常的生产三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncProduceNormalThreeBarcodeToSyncToSAPSoapIn" />
+      <wsdl:output message="tns:SyncProduceNormalThreeBarcodeToSyncToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarcodeSyncErrorToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步出错的生产三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncProduceNormalThreeBarcodeSyncErrorToSAPSoapIn" />
+      <wsdl:output message="tns:SyncProduceNormalThreeBarcodeSyncErrorToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarCodeToSAPByBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">同步指定整车编码的生产三码合一整车档案表更新至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncProduceNormalThreeBarCodeToSAPByBarCodeSoapIn" />
+      <wsdl:output message="tns:SyncProduceNormalThreeBarCodeToSAPByBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceRebindToSyncOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取待同步的重新绑定生产三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetProduceRebindToSyncOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetProduceRebindToSyncOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceRebindSyncErrorOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步出错的重新绑定生产三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetProduceRebindSyncErrorOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetProduceRebindSyncErrorOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceSyncErrorReBindThreeBarcode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步错误的重新绑定生产三码合一整车档案</wsdl:documentation>
+      <wsdl:input message="tns:GetProduceSyncErrorReBindThreeBarcodeSoapIn" />
+      <wsdl:output message="tns:GetProduceSyncErrorReBindThreeBarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeToSyncToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步重新绑定的生产三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncProduceReBindThreeBarcodeToSyncToSAPSoapIn" />
+      <wsdl:output message="tns:SyncProduceReBindThreeBarcodeToSyncToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeSyncErrorToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步已出错的重新绑定生产三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncProduceReBindThreeBarcodeSyncErrorToSAPSoapIn" />
+      <wsdl:output message="tns:SyncProduceReBindThreeBarcodeSyncErrorToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeToSAPByBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">同步指定整车编码的重新绑定生产三码合一整车档案表更新至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncProduceReBindThreeBarcodeToSAPByBarCodeSoapIn" />
+      <wsdl:output message="tns:SyncProduceReBindThreeBarcodeToSAPByBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalToSyncOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取正常待同步的采购三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetPurchaseNormalToSyncOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetPurchaseNormalToSyncOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalSyncErrorOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步出错的采购三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetPurchaseNormalSyncErrorOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetPurchaseNormalSyncErrorOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalSyncErrorThreeBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步错误的采购三码合一整车档案</wsdl:documentation>
+      <wsdl:input message="tns:GetPurchaseNormalSyncErrorThreeBarCodeSoapIn" />
+      <wsdl:output message="tns:GetPurchaseNormalSyncErrorThreeBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarcodeToSyncToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步正常的采购三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncPurchaseNormalThreeBarcodeToSyncToSAPSoapIn" />
+      <wsdl:output message="tns:SyncPurchaseNormalThreeBarcodeToSyncToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步出错的采购三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncPurchaseNormalThreeBarcodeSyncErrorToSAPSoapIn" />
+      <wsdl:output message="tns:SyncPurchaseNormalThreeBarcodeSyncErrorToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarCodeToSAPByBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">同步指定整车编码的采购三码合一整车档案表更新至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncPurchaseNormalThreeBarCodeToSAPByBarCodeSoapIn" />
+      <wsdl:output message="tns:SyncPurchaseNormalThreeBarCodeToSAPByBarCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseRebindToSyncOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取待同步的重新绑定采购三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetPurchaseRebindToSyncOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetPurchaseRebindToSyncOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseRebindSyncErrorOrderCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步出错的重新绑定采购三码合一订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetPurchaseRebindSyncErrorOrderCodeSoapIn" />
+      <wsdl:output message="tns:GetPurchaseRebindSyncErrorOrderCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseSyncErrorReBindThreeBarcode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取同步错误的重新绑定采购三码合一整车档案</wsdl:documentation>
+      <wsdl:input message="tns:GetPurchaseSyncErrorReBindThreeBarcodeSoapIn" />
+      <wsdl:output message="tns:GetPurchaseSyncErrorReBindThreeBarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeToSyncToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步重新绑定的采购三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncPurchaseReBindThreeBarcodeToSyncToSAPSoapIn" />
+      <wsdl:output message="tns:SyncPurchaseReBindThreeBarcodeToSyncToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按订单同步已出错的重新绑定采购三码合一信息至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncPurchaseReBindThreeBarcodeSyncErrorToSAPSoapIn" />
+      <wsdl:output message="tns:SyncPurchaseReBindThreeBarcodeSyncErrorToSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeToSAPByBarCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">同步指定整车编码的重新绑定采购三码合一整车档案表更新至SAP</wsdl:documentation>
+      <wsdl:input message="tns:SyncPurchaseReBindThreeBarcodeToSAPByBarCodeSoapIn" />
+      <wsdl:output message="tns:SyncPurchaseReBindThreeBarcodeToSAPByBarCodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAPSyncServiceSoap" type="tns:SAPSyncServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNormalToSyncMADCCode">
+      <soap:operation soapAction="http://tempuri.org/GetNormalToSyncMADCCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNormalSyncErrorMADCCode">
+      <soap:operation soapAction="http://tempuri.org/GetNormalSyncErrorMADCCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNormalSyncErrorWInOutInfo">
+      <soap:operation soapAction="http://tempuri.org/GetNormalSyncErrorWInOutInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoToSyncToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncNormalWInOutInfoToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoSyncErrorToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncNormalWInOutInfoSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoToSAPByBarCode">
+      <soap:operation soapAction="http://tempuri.org/SyncNormalWInOutInfoToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackToSyncMADCCode">
+      <soap:operation soapAction="http://tempuri.org/GetBackToSyncMADCCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackSyncErrorMADCCode">
+      <soap:operation soapAction="http://tempuri.org/GetBackSyncErrorMADCCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackSyncErrorWInOutInfo">
+      <soap:operation soapAction="http://tempuri.org/GetBackSyncErrorWInOutInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoToSyncToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncBackWInOutInfoToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoSyncErrorToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncBackWInOutInfoSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoToSAPByBarCode">
+      <soap:operation soapAction="http://tempuri.org/SyncBackWInOutInfoToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalToSyncOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetProduceNormalToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalSyncErrorOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetProduceNormalSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalSyncErrorThreeBarCode">
+      <soap:operation soapAction="http://tempuri.org/GetProduceNormalSyncErrorThreeBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarcodeToSyncToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncProduceNormalThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarcodeSyncErrorToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncProduceNormalThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarCodeToSAPByBarCode">
+      <soap:operation soapAction="http://tempuri.org/SyncProduceNormalThreeBarCodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceRebindToSyncOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetProduceRebindToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceRebindSyncErrorOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetProduceRebindSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceSyncErrorReBindThreeBarcode">
+      <soap:operation soapAction="http://tempuri.org/GetProduceSyncErrorReBindThreeBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeToSyncToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncProduceReBindThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeSyncErrorToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncProduceReBindThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeToSAPByBarCode">
+      <soap:operation soapAction="http://tempuri.org/SyncProduceReBindThreeBarcodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalToSyncOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetPurchaseNormalToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalSyncErrorOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetPurchaseNormalSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalSyncErrorThreeBarCode">
+      <soap:operation soapAction="http://tempuri.org/GetPurchaseNormalSyncErrorThreeBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarcodeToSyncToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncPurchaseNormalThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncPurchaseNormalThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarCodeToSAPByBarCode">
+      <soap:operation soapAction="http://tempuri.org/SyncPurchaseNormalThreeBarCodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseRebindToSyncOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetPurchaseRebindToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseRebindSyncErrorOrderCode">
+      <soap:operation soapAction="http://tempuri.org/GetPurchaseRebindSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseSyncErrorReBindThreeBarcode">
+      <soap:operation soapAction="http://tempuri.org/GetPurchaseSyncErrorReBindThreeBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeToSyncToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncPurchaseReBindThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAP">
+      <soap:operation soapAction="http://tempuri.org/SyncPurchaseReBindThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeToSAPByBarCode">
+      <soap:operation soapAction="http://tempuri.org/SyncPurchaseReBindThreeBarcodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAPSyncServiceSoap12" type="tns:SAPSyncServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNormalToSyncMADCCode">
+      <soap12:operation soapAction="http://tempuri.org/GetNormalToSyncMADCCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNormalSyncErrorMADCCode">
+      <soap12:operation soapAction="http://tempuri.org/GetNormalSyncErrorMADCCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNormalSyncErrorWInOutInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetNormalSyncErrorWInOutInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoToSyncToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncNormalWInOutInfoToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoSyncErrorToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncNormalWInOutInfoSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncNormalWInOutInfoToSAPByBarCode">
+      <soap12:operation soapAction="http://tempuri.org/SyncNormalWInOutInfoToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackToSyncMADCCode">
+      <soap12:operation soapAction="http://tempuri.org/GetBackToSyncMADCCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackSyncErrorMADCCode">
+      <soap12:operation soapAction="http://tempuri.org/GetBackSyncErrorMADCCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBackSyncErrorWInOutInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetBackSyncErrorWInOutInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoToSyncToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncBackWInOutInfoToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoSyncErrorToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncBackWInOutInfoSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncBackWInOutInfoToSAPByBarCode">
+      <soap12:operation soapAction="http://tempuri.org/SyncBackWInOutInfoToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalToSyncOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetProduceNormalToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalSyncErrorOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetProduceNormalSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceNormalSyncErrorThreeBarCode">
+      <soap12:operation soapAction="http://tempuri.org/GetProduceNormalSyncErrorThreeBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarcodeToSyncToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncProduceNormalThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarcodeSyncErrorToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncProduceNormalThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceNormalThreeBarCodeToSAPByBarCode">
+      <soap12:operation soapAction="http://tempuri.org/SyncProduceNormalThreeBarCodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceRebindToSyncOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetProduceRebindToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceRebindSyncErrorOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetProduceRebindSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduceSyncErrorReBindThreeBarcode">
+      <soap12:operation soapAction="http://tempuri.org/GetProduceSyncErrorReBindThreeBarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeToSyncToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncProduceReBindThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeSyncErrorToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncProduceReBindThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncProduceReBindThreeBarcodeToSAPByBarCode">
+      <soap12:operation soapAction="http://tempuri.org/SyncProduceReBindThreeBarcodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalToSyncOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchaseNormalToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalSyncErrorOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchaseNormalSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseNormalSyncErrorThreeBarCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchaseNormalSyncErrorThreeBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarcodeToSyncToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncPurchaseNormalThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarcodeSyncErrorToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncPurchaseNormalThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseNormalThreeBarCodeToSAPByBarCode">
+      <soap12:operation soapAction="http://tempuri.org/SyncPurchaseNormalThreeBarCodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseRebindToSyncOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchaseRebindToSyncOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseRebindSyncErrorOrderCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchaseRebindSyncErrorOrderCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseSyncErrorReBindThreeBarcode">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchaseSyncErrorReBindThreeBarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeToSyncToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncPurchaseReBindThreeBarcodeToSyncToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeSyncErrorToSAP">
+      <soap12:operation soapAction="http://tempuri.org/SyncPurchaseReBindThreeBarcodeSyncErrorToSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPurchaseReBindThreeBarcodeToSAPByBarCode">
+      <soap12:operation soapAction="http://tempuri.org/SyncPurchaseReBindThreeBarcodeToSAPByBarCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAPSyncService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提供 SAP 与 MADC 之间的同步转换</wsdl:documentation>
+    <wsdl:port name="SAPSyncServiceSoap" binding="tns:SAPSyncServiceSoap">
+      <soap:address location="http://localhost:62403/SAPSyncService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SAPSyncServiceSoap12" binding="tns:SAPSyncServiceSoap12">
+      <soap12:address location="http://localhost:62403/SAPSyncService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

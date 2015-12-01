@@ -1,0 +1,14 @@
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.csprojResolveAssemblyReference.cache
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.ctlMain.resources
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.csproj.GenerateResource.Cache
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\bin\Debug\Svr.Plugin.SyncData.SMS.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\bin\Debug\Svr.Plugin.SyncData.SMS.pdb
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\bin\Debug\Config.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\bin\Debug\log4net.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\bin\Debug\Svr.Plugin.Interface.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\bin\Debug\Svr.Plugin.Interface.pdb
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.pdb
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.frmSMSRegister.resources
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.frmChargeUp.resources
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.SyncData.SMS\obj\Debug\Svr.Plugin.SyncData.SMS.frmSendSMS.resources

@@ -1,0 +1,9 @@
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\bin\x86\Debug\Svr.Plugin.Interface.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\bin\x86\Debug\Svr.Plugin.Interface.pdb
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x86\Debug\Svr.Plugin.Interface.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x86\Debug\Svr.Plugin.Interface.pdb
+D:\App\通用插件系统\Plugin\Svr.Plugin.Interface\bin\x86\Debug\Svr.Plugin.Interface.dll
+D:\App\通用插件系统\Plugin\Svr.Plugin.Interface\bin\x86\Debug\Svr.Plugin.Interface.pdb
+D:\App\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\App\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x86\Debug\Svr.Plugin.Interface.dll
+D:\App\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x86\Debug\Svr.Plugin.Interface.pdb

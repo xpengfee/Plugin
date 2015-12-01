@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<THS>
+  <section name="Svr.Plugin.SyncData.SMS">
+    <entry name="AutoRun">True</entry>
+    <entry name="ShowStatu">True</entry>
+    <entry name="OnlyWorkTime">False</entry>
+    <entry name="WorkTimeStart">11:54</entry>
+    <entry name="WorkTimeEnd">11:54</entry>
+    <entry name="DispNum">100</entry>
+    <entry name="SleepGap">200</entry>
+    <entry name="SyncGap">1</entry>
+    <entry name="AutoSyncError">False</entry>
+    <entry name="SyncErrorTimeStart">11:54</entry>
+    <entry name="SyncErrorTimeEnd">11:54</entry>
+    <entry name="DbConnection">Data Source=(local);Initial Catalog=WPSCRM_AMCollect;Persist Security Info=True;User ID=sa;Password=sa</entry>
+    <entry name="TableName">aaaa</entry>
+    <entry name="ColID_IsIncre">True</entry>
+    <entry name="ColID">smssend_id</entry>
+    <entry name="ColMobile">smssend_mobile</entry>
+    <entry name="ColContent">smssend_content</entry>
+    <entry name="ColCreatetime">smssend_createtime</entry>
+    <entry name="ColState">smssend_state</entry>
+    <entry name="ColStateDesc">smssend_statedesc</entry>
+    <entry name="StateToSend">0</entry>
+    <entry name="StateSendSuccess">1</entry>
+    <entry name="StateSendFail">6</entry>
+    <entry name="SMSSign_Enable">True</entry>
+    <entry name="SMSSign_Content">【净鲜工坊】</entry>
+    <entry name="Sn">3SDK-JBX-0130-PHYNL</entry>
+    <entry name="SnPwd">856063</entry>
+    <entry name="Register_UserName">净鲜工坊</entry>
+    <entry name="Register_ContactName">许</entry>
+    <entry name="Register_ContactMobile">15811102016</entry>
+    <entry name="Register_ContactPhone">010-38921223</entry>
+    <entry name="Register_ContactFax">010-38921223</entry>
+    <entry name="Register_ContactEmail">15811102016@163.com</entry>
+    <entry name="Register_ContactZipcode">100083</entry>
+    <entry name="Register_ContactAddress">北京市海淀区林业大学</entry>
+  </section>
+</THS>

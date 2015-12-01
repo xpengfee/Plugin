@@ -1,0 +1,10 @@
+E:\Vs.net\企业\天津爱玛\二期程序\WXAMII\Svr.Plugin.Interface\bin\x64\Debug\Svr.Plugin.Interface.dll
+E:\Vs.net\企业\天津爱玛\二期程序\WXAMII\Svr.Plugin.Interface\bin\x64\Debug\Svr.Plugin.Interface.pdb
+E:\Vs.net\企业\天津爱玛\二期程序\WXAMII\Svr.Plugin.Interface\obj\x64\Debug\Svr.Plugin.Interface.dll
+E:\Vs.net\企业\天津爱玛\二期程序\WXAMII\Svr.Plugin.Interface\obj\x64\Debug\Svr.Plugin.Interface.pdb
+E:\Vs.net\企业\天津爱玛\二期程序\WXAMII\Svr.Plugin.Interface\bin\x64\Debug\log4net.dll
+E:\Vs.net\企业\天津爱玛\二期程序\WXAMII\Svr.Plugin.Interface\obj\x64\Debug\Svr.Plugin.Interface.csprojResolveAssemblyReference.cache
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\bin\x64\Debug\Svr.Plugin.Interface.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\bin\x64\Debug\Svr.Plugin.Interface.pdb
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x64\Debug\Svr.Plugin.Interface.dll
+D:\云和畅想\WorkSpace\工具\通用插件系统\Plugin\Svr.Plugin.Interface\obj\x64\Debug\Svr.Plugin.Interface.pdb
